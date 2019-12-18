@@ -1,0 +1,44 @@
+body {
+  display: grid;
+  gap: 10px;
+}
+
+h1 {
+  margin: 0;
+}
+
+body>* {
+  box-sizing: border-box;
+  border: 1px solid black;
+}
+
+header {
+  grid-area: header;
+}
+
+h1 {
+  grid-area: title;
+}
+
+aside {
+  grid-area: navbar;
+}
+
+main {
+  grid-area: main;
+}
+
+footer {
+  grid-area: footer;
+}
+
+@media (orientation: landscape) {
+  body {
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: 
+    "header header" 
+    "navbar title" 
+    "navbar main" 
+    "footer footer";
+  }
+}
