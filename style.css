@@ -1,6 +1,12 @@
 body {
   display: grid;
   gap: 10px;
+  grid-template-areas: 
+    "header" 
+    "title" 
+    "main"
+    "navbar"
+    "footer";
 }
 
 h1 {
@@ -55,16 +61,16 @@ footer {
 
 @media (min-width: 1200px) {
   body {
+    width: 1200px;
+    margin: auto;
     grid-template-columns: 1fr 3fr 1fr;
     grid-template-areas: 
     "header header header" 
     "navbar title advent" 
     "navbar main advent" 
     "footer footer footer";
-  
+
   }.right-sidebar {
     display: block;
   }
-
 }
-
