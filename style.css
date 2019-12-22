@@ -42,6 +42,10 @@ main {
   grid-area: main;
 }
 
+.member, .links, .trip {
+  cursor: pointer;
+}
+
 footer {
   grid-area: footer;
   justify-self: center;

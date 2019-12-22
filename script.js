@@ -38,8 +38,6 @@ const members = [
   },
 ];
 
-
-
 function memSelect({target}) {
   const {name, img, text} = members.find(member => member.name == target.text);
   // console.log(member);
