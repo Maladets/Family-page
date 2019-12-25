@@ -51,18 +51,10 @@ function memSelect({target}) {
 // JS Duck typing example: calling function w/o any particular event
 // memSelect({target: {text: "Tato"}});
 
-// let response = await fetch ("members.json");
-// if (response.ok) {
-//   let memJsonized = await response.json()
-// } else {
-//   console.log("HTTP error:" + response.status)
-// }
-
-fetch("members.json")
+fetch("members.json") 
   .then(response => response.json())
-  .then(arr => members = arr)
-
-setTimeout(()=>console.log(members), 15)
+  console.log(response.json())
+  // .then(arr => members = arr)
 
 // client id
 // 131032568461-h5ta45j5oc23j9r6agpds1c8nok1cetq.apps.googleusercontent.com
