@@ -1,11 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
 body {
   display: grid;
   gap: 10px;
   grid-template-areas: 
     "header" 
     "title" 
-    "main"
     "navbar"
+    "main"
+    "gallery"
     "footer";
 }
 
@@ -48,6 +58,7 @@ main {
 
 footer {
   grid-area: footer;
+  align-items:end;
   justify-self: center;
   align-self: center;
 } 
@@ -58,7 +69,8 @@ footer {
     grid-template-areas: 
     "header header" 
     "navbar title" 
-    "navbar main" 
+    "navbar main"
+    "gallery gallery" 
     "footer footer";
   }
 }
@@ -72,6 +84,7 @@ footer {
     "header header header" 
     "navbar title advent" 
     "navbar main advent" 
+    "gallery gallery gallery"
     "footer footer footer";
 
   }.right-sidebar {

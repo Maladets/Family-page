@@ -1,11 +1,6 @@
-// currYear = new Date().getFullYear();
-// let year = document.getElementById("currYear").innerHTML;
-// year = year+currYear;
-// document.getElementById("currYear").innerHTML = year;
-
 currYear.innerText += new Date().getFullYear();
 
-let members;
+let members, trips;
 // const members = [
 //   {
 //     name: "Tato",
@@ -51,12 +46,30 @@ function memSelect({target}) {
 // JS Duck typing example: calling function w/o any particular event
 // memSelect({target: {text: "Tato"}});
 
-fetch("members.json") 
+fetch("json/members.json") 
   .then(response => response.json())
-  console.log(response.json())
-  // .then(arr => members = arr)
+  .then(arr => members = arr)
 
 // client id
 // 131032568461-h5ta45j5oc23j9r6agpds1c8nok1cetq.apps.googleusercontent.com
 // client secret
 // pu6EQjUrlebEoPnmByj-Iyfn
+
+fetch("json/trips.json") 
+  .then(response => response.json())
+  .then(arr => trips = arr)
+
+// let student = {
+//   name: "Kill",
+//   "last name": "Bill",
+//   laziness: 4,
+//   trick: 4
+// }
+// console.log(student)
+
+// if (student.laziness >= 3 
+//   && student.laziness <= 5 
+//   && student.trick <= 4) {
+//     console.log(`Student ${student.name} ${student["last name"]} отправлен на пересдачу`)
+//   };
+
