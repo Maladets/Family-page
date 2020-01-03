@@ -44,7 +44,7 @@ aside {
 }
 
 .right-sidebar {
-  grid-area: advent;
+  grid-area: trips;
   display: none;
 }
 
@@ -54,6 +54,19 @@ main {
 
 .member, .links, .trip {
   cursor: pointer;
+}
+
+.gallery {
+  width: 1200px;
+  grid-area: gallery;
+  display: flex;
+  
+}
+
+.imgWrap>img {
+  border: 2px solid white;
+  width: 100%;
+  height: auto;
 }
 
 footer {
@@ -82,8 +95,8 @@ footer {
     grid-template-columns: 1fr 3fr 1fr;
     grid-template-areas: 
     "header header header" 
-    "navbar title advent" 
-    "navbar main advent" 
+    "navbar title trips" 
+    "navbar main trips" 
     "gallery gallery gallery"
     "footer footer footer";
 

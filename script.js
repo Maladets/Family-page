@@ -59,17 +59,33 @@ fetch("json/trips.json")
   .then(response => response.json())
   .then(arr => trips = arr)
 
-// let student = {
-//   name: "Kill",
-//   "last name": "Bill",
-//   laziness: 4,
-//   trick: 4
-// }
-// console.log(student)
+const gallery = document.querySelector(".gallery");
 
-// if (student.laziness >= 3 
-//   && student.laziness <= 5 
-//   && student.trick <= 4) {
-//     console.log(`Student ${student.name} ${student["last name"]} отправлен на пересдачу`)
-//   };
+const countryList = document.querySelector(".trips");
+countryList.onclick = function (event) {
+  gallery.style.display = "none";
+  gallery.innerHTML = "";
+  const country = event.target.innerText;
 
+//  ****** MAGIC******
+
+const triggers = [];
+
+  trips[country].forEach(function (fileName) {
+    const div = document.createElement("div");
+    div.className = "imgWrap";
+    const img = document.createElement("img");
+    img.src = `img/trips/${country}/${fileName}`;
+    
+    triggers.push(new Promise( (resolve, reject) => 
+
+    img.onload = () => {
+      div.style.flex = "" + img.naturalWidth/img.naturalHeight;
+      resolve()
+    }))
+
+    div.appendChild(img)
+    gallery.appendChild(div);
+  })
+  Promise.all(triggers).then( () => gallery.style.display = null)
+}
